@@ -22,20 +22,6 @@
 
         ShowCharacter(someString, position);
 
-        //int stringLength = someString.Length;
-
-        //Check to see if the input was a valid whole number <= string length 
-        /* while ((position%1) != 0) || (position > stringLength) || (position != stringLength))
-        {
-            System.Console.WriteLine($"You entered a nonvalid input. Plase enter a whole number less than or equal to {someString.Length}: ");
-            position = Convert.ToDouble(Console.ReadLine());
-        } 
-
-        if((position%1) == 0) && (position <= someString.Length))
-        {
-            ShowCharacter(someString, position);
-        } */
-
 
         //Calculate retail price 
         System.Console.WriteLine("Please enter the wholesale cost: ");
@@ -57,7 +43,6 @@
         }
 
         //Prime numbers
-
         char redo = 'Y';
         while (redo == 'Y')
         {
@@ -72,82 +57,68 @@
             {
                 System.Console.WriteLine($"False, the number {num} is not prime.");
             }
-        System.Console.WriteLine("Do you want to repeat the program? Enter Y or N");
-        redo = char.Parse(Console.ReadLine().ToUpper());
-    
 
-        while (redo != 'Y' && redo!= 'N')
-        {
-            System.Console.WriteLine("You did not enter a valid input. Please enter Y or N: ");
-            redo = char.Parse(Console.ReadLine());
-        } 
+            System.Console.WriteLine("Do you want to repeat the program? Enter Y or N");
+            redo = char.Parse(Console.ReadLine().ToUpper());
+        
+            while (redo != 'Y' && redo!= 'N')
+            {
+                System.Console.WriteLine("You did not enter a valid input. Please enter Y or N: ");
+                redo = char.Parse(Console.ReadLine());
+            } 
 
-        if(redo == 'N')
-        {        
-            System.Console.WriteLine($"You entered {redo}. The program will now terminate.");
+            if(redo == 'N')
+            {        
+                System.Console.WriteLine($"You entered {redo}. The program will now terminate.");
+            }
+            else 
+            {
+                System.Console.WriteLine($"You entered {redo}. The program will repeat.");
+            }
         }
-        else 
-        {
-            System.Console.WriteLine($"You entered {redo}. The program will repeat.");
-        }
-    }
-}
+     }
+
 
     // Show Character Method 
-     static void ShowCharacter(string word, double pos)
-     {
+    static void ShowCharacter(string word, double pos)
+    {
         Console.WriteLine($"The character at position {pos} in the word {word} is {(word[(Convert.ToInt32(pos)-1)])}");
-     }
+    }
 
     //Retail Price Method 
-     static double CalculateRetail(double wholeCost, double percentage)
-     {
-         double retaillPrice = wholeCost + (wholeCost * percentage);
-         return retaillPrice; 
-     }
+    static double CalculateRetail(double wholeCost, double percentage)
+    {
+        double retaillPrice = wholeCost + (wholeCost * percentage);
+        return retaillPrice; 
+    }
 
     //Temperature Table Method 
-     static double Celsius(double fah)
-     {
-            double celsius = (5.0/9.0)*(fah - 32.0);
-            return celsius; 
-     }
+    static double Celsius(double fah)
+    {
+        double celsius = (5.0/9.0)*(fah - 32.0);
+        return celsius; 
+    }
 
     //Prime Numbers Method 
     static bool IsPrime(int userNum)
-     {
-         int primeCounter = 0;
-         bool prime = false;
-         for(int i=1; i <= userNum; i++)
-         {
-             if(userNum % i == 0)
-             { 
+    {
+        int primeCounter = 0;
+        bool prime = false;
+        for(int i=1; i <= userNum; i++)
+        {
+            if(userNum % i == 0)
+            { 
                 primeCounter++;
-             }
-         }
-         if (primeCounter == 2)
-         {
+            }
+        }
+        if (primeCounter == 2)
+        {
             prime = true; 
-         }
-         return prime; 
-     } 
-
-       //Prime Numbers Method 
-     /* static bool IsPrime(int userNum)
-     {
-         bool prime = false;
-         for(int i=1; i < Math.Sqrt(userNum); i++)
-         {
-             if(userNum % i == 0)
-             {
-                prime = true; 
-             }
-         }
-         return prime; 
-     } */
-
+        }
+        
+        return prime; 
+    } 
  }
-
 /* Prime number method sources:
 https://www.tutorialspoint.com/Chash-Program-to-check-if-a-number-is-prime-or-not
 
